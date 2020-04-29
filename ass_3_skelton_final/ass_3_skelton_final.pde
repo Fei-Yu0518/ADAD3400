@@ -2,7 +2,7 @@ import processing.sound.*;
 import KinectPV2.*;
 
 KinectPV2 kinect;
-
+SoundFile soundfile;
 float dampening = 0.99;
 
 ArrayList<flower> flower_list =new ArrayList<flower>();
@@ -21,8 +21,11 @@ void setup() {
   kinect = new KinectPV2(this);
   kinect.enableDepthImg(true);
   kinect.enableSkeletonDepthMap(true); 
-
+  
   kinect.init();
+  
+  soundfile = new SoundFile(this, "background_music.aiff");
+  soundfile.play();
 }
 
 
